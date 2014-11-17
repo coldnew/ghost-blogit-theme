@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         jshint: {
             files: ['Gruntfile.js',
                     'package.json',
-                    'assets/js/coldnew.js']
+                    'assets/js/blogit.js']
         },
 
         // Compile Sass to CSS -  destination : source
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                       'assets/js/jquery.fitvids.js',
                       'assets/js/jquery.parallax-1.1.3.js',
                       'assets/js/jquery.easing.1.3.js',
-                      'assets/js/coldnew.js'],
+                      'assets/js/blogit.js'],
 
                 dest: 'assets/js/scripts.js'
             },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
                 src: ['assets/bower_components/highlightjs/styles/railscasts.css',
                       'assets/css/compiled_sass.css'],
 
-                dest: 'assets/css/coldnew.css'
+                dest: 'assets/css/blogit.css'
             },
         },
 
@@ -70,8 +70,8 @@ module.exports = function(grunt) {
         //Minify css
         cssmin: {
             css: {
-                src: 'assets/css/coldnew.css',
-                dest:'assets/css/coldnew.min.css'
+                src: 'assets/css/blogit.css',
+                dest:'assets/css/blogit.min.css'
             }
         },
 
@@ -140,7 +140,7 @@ module.exports = function(grunt) {
                 tasks: ['cssmin']
             },
             uglify: {
-                files: ['assets/js/coldnew.js'],
+                files: ['assets/js/blogit.js'],
                 tasks: ['uglify']
             },
             imagemin: {
