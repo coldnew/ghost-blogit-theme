@@ -1,0 +1,10 @@
+{
+  "name": "Blogit",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "highlightjs": "~8.0.0",
+    "bootstrap-sass-official": "~3.2.0+2",
+    "font-awesome": "~4.2.0"
+  }
+}
