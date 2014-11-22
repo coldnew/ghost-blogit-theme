@@ -21,8 +21,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'assets/css/screencd.sass.css': 'assets/sass/screen.scss',
-                    'assets/css/toc.sass.css': 'assets/sass/toc.scss'
+                    'assets/css/screencd.sass.css': 'assets/sass/screen.scss'
                 }
             },
         },
