@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                       'assets/js/jquery.fitvids.js',
                       'assets/js/blogit.colorprompt.js'],
 
-                dest: 'assets/js/scripts.js'
+                dest: 'assets/js/blogit.js'
             },
 
             css: {
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'assets/js/scripts.min.js': ['<%= concat.js.dest %>']
+                    'assets/js/blogit.min.js': ['<%= concat.js.dest %>']
                 }
             }
         },

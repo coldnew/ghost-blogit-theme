@@ -25,3 +25,6 @@ assets/js/*.min.js
 assets/js/*.min.map
 
 assets/css/*.min.css
+
+# Special ignore file
+assets/js/blogit.js
