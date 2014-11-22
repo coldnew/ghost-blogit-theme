@@ -1,11 +1,12 @@
+var add_toc = false;
 var ToC =
         "<nav role='navigation' class='table-of-contents'>" +
-        "<h2>On this page:</h2>" +
+        "<h2>Table of Contents</h2>" +
         "<ul>";
 
 var newLine, el, title, link;
 
-$("article h1").each(function() {
+$("article h2").each(function() {
 
     el = $(this);
     title = el.text();
@@ -20,8 +21,17 @@ $("article h1").each(function() {
 
     ToC += newLine;
 
+    add_toc = true;
 });
 
 ToC += "</ul>" + "</nav>";
+//var ToC_Full = "";
+//if (ToC) {
+//    ToC_Full = TOC_Header + Toc +"</ul></nav>";
+//}
 
-$(".all-questions").prepend(ToC);
+if (add_toc == false) {
+    ToC = "";
+}
+
+$(".table-of-contents").prepend(ToC);
