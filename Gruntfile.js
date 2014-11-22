@@ -20,13 +20,10 @@ module.exports = function(grunt) {
         // Compile Sass to CSS -  destination : source
         sass: {
             dist: {
-                options: {
-                    style: 'compact',
-                    banner: '<%= banner %>'
-                },
                 files: {
-                    'assets/css/compiled_sass.css': 'assets/sass/style.scss'
-                },
+                    'assets/css/screencd.sass.css': 'assets/sass/screen.scss',
+                    'assets/css/toc.sass.css': 'assets/sass/toc.scss'
+                }
             },
         },
 
@@ -48,9 +45,9 @@ module.exports = function(grunt) {
             },
 
             css: {
-                src: ['assets/css/compiled_sass.css'],
+                src: ['assets/css/**.sass.css'],
 
-                dest: 'assets/css/blogit.sass.css'
+                dest: 'assets/css/blogit.css'
             },
         },
 
@@ -71,7 +68,7 @@ module.exports = function(grunt) {
             src: 'assets/css/*.css',
             dist: {
                 files: {
-                    'assets/css/blogit.min.css': ['assets/css/*.css']
+                    'assets/css/blogit.min.css': ['assets/css/blogit.css']
                 }
             }
         },
