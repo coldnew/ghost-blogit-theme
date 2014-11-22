@@ -27,6 +27,7 @@ assets/js/*.min.map
 assets/css/*.min.css
 assets/css/*.sass.css
 assets/css/*.css.map
+assets/css/*.less.css
 assets/css/blogit.css
 assets/css/compiled_sass.css
 

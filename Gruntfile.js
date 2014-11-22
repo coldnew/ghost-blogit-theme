@@ -27,6 +27,14 @@ module.exports = function(grunt) {
             },
         },
 
+        less: {
+            dist:{
+                files: {
+                    'assets/css/blogit.less.css': 'assets/less/blogit.less'
+                }
+            }
+        },
+
         // Concatenate all JavaScript & CSS files
         concat: {
             options: {
@@ -45,7 +53,7 @@ module.exports = function(grunt) {
             },
 
             css: {
-                src: ['assets/css/**.sass.css'],
+                src: ['assets/css/**.sass.css', 'assets/css/**.less.css'],
 
                 dest: 'assets/css/blogit.css'
             },
@@ -121,6 +129,10 @@ module.exports = function(grunt) {
 
         // Simple config to run sass, jshint and uglify any time a js or sass file is added, modified or deleted
         watch: {
+            less: {
+                files: ['assets/less/{,*/}*.less'],
+                tasks: ['less']
+            },
             sass: {
                 files: ['assets/sass/{,*/}*.scss'],
                 tasks: ['sass']
@@ -155,6 +167,7 @@ module.exports = function(grunt) {
     // Load the plug-ins
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-autoprefixer');
@@ -168,6 +181,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default',
                        [ 'jshint',
                          'sass',
+                         'less',
                          'concat',
                          'uglify',
                          'cssmin',
