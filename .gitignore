@@ -19,3 +19,7 @@ node_modules
 projectFilesBackup
 
 .DS_Store
+
+bower_components/
+assets/js/*.min.js
+assets/js/*.map.js
