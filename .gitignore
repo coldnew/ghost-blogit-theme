@@ -22,4 +22,6 @@ projectFilesBackup
 
 bower_components/
 assets/js/*.min.js
-assets/js/*.map.js
+assets/js/*.min.map
+
+assets/css/*.min.css
