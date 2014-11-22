@@ -1,37 +1,36 @@
-var add_toc = false;
-var ToC =
-        "<nav role='navigation' class='table-of-contents'>" +
-        "<h2>Table of Contents</h2>" +
-        "<ul>";
+// Generate table-of-contents for blogit
 
-var newLine, el, title, link;
+(function () {
+    var header =
+            "<nav role='navigation' class='table-of-contents'>" +
+            "<h2>Table of Contents</h2>" +
+            "<ul>";
+    var content = "";
+    var footer = "</ul>" + "</nav>";
 
-$("article h2").each(function() {
+    var ToC = "";
+    var newLine, el, title, link;
+    $("article h2").each(function() {
 
-    el = $(this);
-    title = el.text();
-    link = "#" + el.attr("id");
+        el = $(this);
+        title = el.text();
+        link = "#" + el.attr("id");
 
-    newLine =
-        "<li>" +
-        "<a href='" + link + "'>" +
-        title +
-        "</a>" +
-        "</li>";
+        newLine =
+            "<li>" +
+            "<a href='" + link + "'>" +
+            title +
+            "</a>" +
+            "</li>";
 
-    ToC += newLine;
+        content += newLine;
+    });
 
-    add_toc = true;
-});
+    ToC = header + content + footer;
 
-ToC += "</ul>" + "</nav>";
-//var ToC_Full = "";
-//if (ToC) {
-//    ToC_Full = TOC_Header + Toc +"</ul></nav>";
-//}
+    // Only prepend when content not empty
+    if (content) {
+        $(".table-of-contents").prepend(ToC);
+    }
 
-if (add_toc == false) {
-    ToC = "";
-}
-
-$(".table-of-contents").prepend(ToC);
+})();
