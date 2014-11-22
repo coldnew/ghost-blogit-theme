@@ -8,7 +8,6 @@
     var content = "";
     var footer = "</ul>" + "</nav>";
 
-    var ToC = "";
     var newLine, el, title, link;
     $("article h2").each(function() {
 
@@ -26,11 +25,9 @@
         content += newLine;
     });
 
-    ToC = header + content + footer;
-
     // Only prepend when content not empty
     if (content) {
-        $(".table-of-contents").prepend(ToC);
+        $(".table-of-contents").prepend(header + content + footer);
     }
 
 })();
