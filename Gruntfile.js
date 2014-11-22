@@ -14,12 +14,12 @@ module.exports = function(grunt) {
         jshint: {
             files: ['Gruntfile.js',
                     'package.json',
-                    'assets/js/blogit.js']
+                   ]
         },
 
         // Compile Sass to CSS -  destination : source
         sass: {
-            compile: {
+            dist: {
                 options: {
                     style: 'compact',
                     banner: '<%= banner %>'
@@ -48,10 +48,9 @@ module.exports = function(grunt) {
             },
 
             css: {
-                src: ['assets/bower_components/highlightjs/styles/railscasts.css',
-                      'assets/css/compiled_sass.css'],
+                src: ['assets/css/compiled_sass.css'],
 
-                dest: 'assets/css/blogit.css'
+                dest: 'assets/css/blogit.sass.css'
             },
         },
 
@@ -69,9 +68,11 @@ module.exports = function(grunt) {
 
         //Minify css
         cssmin: {
-            css: {
-                src: 'assets/css/blogit.css',
-                dest:'assets/css/blogit.min.css'
+            src: 'assets/css/*.css',
+            dist: {
+                files: {
+                    'assets/css/blogit.min.css': ['assets/css/*.css']
+                }
             }
         },
 
@@ -136,7 +137,7 @@ module.exports = function(grunt) {
                 tasks: ['concat']
             },
             cssmin: {
-                files : ['<%= cssmin.css.src %>'],
+                files : ['<%= cssmin.src %>'],
                 tasks: ['cssmin']
             },
             uglify: {
@@ -171,8 +172,8 @@ module.exports = function(grunt) {
                        [ 'jshint',
                          'sass',
                          'concat',
-                         'cssmin',
                          'uglify',
+                         'cssmin',
                          'imagemin',
                          'svgmin'
                        ]
