@@ -38,11 +38,9 @@ module.exports = function(grunt) {
                 separator: ';',
             },
             js: {
-                src: ['assets/bower_components/bootstrap/dist/js/bootstrap.js',
+                src: ['bower_components/bootstrap/dist/js/bootstrap.js',
                       'assets/js/jquery.fitvids.js',
-                      'assets/js/jquery.parallax-1.1.3.js',
-                      'assets/js/jquery.easing.1.3.js',
-                      'assets/js/blogit.js'],
+                      'assets/js/blogit.colorprompt.js'],
 
                 dest: 'assets/js/scripts.js'
             },
