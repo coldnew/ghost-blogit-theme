@@ -40,7 +40,9 @@ module.exports = function(grunt) {
             js: {
                 src: ['bower_components/bootstrap/dist/js/bootstrap.js',
                       'assets/js/jquery.fitvids.js',
-                      'assets/js/blogit.colorprompt.js'],
+                      'assets/js/blogit.colorprompt.js',
+                      'assets/js/blogit.toc.js',
+                     ],
 
                 dest: 'assets/js/blogit.js'
             },
