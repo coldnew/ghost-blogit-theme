@@ -1,4 +1,11 @@
-@import "../../bower_components/bootstrap/less/bootstrap.less";
+//@import "../../bower_components/bootstrap/less/reset.less";
+
+//@import "../../bower_components/bootstrap/less/bootstrap.less";
+
+@import "../../bower_components/bootstrap/less/variables.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
+
+@import "../../bower_components/bootstrap/less/modals.less";
 
 @blog-background: #2e3436;
 @blog-foreground: #eeeeec;
@@ -7,7 +14,7 @@
 pre.src, pre.example, .modal-body > pre {
     .resizable(both);
     .box-shadow(0 3px 7px rgba(0,0,0,0.3));
-    border: 1px solid @gray-lighter;
+//    border: 1px solid @gray-lighter;
     background: @blog-background;
     color: @blog-foreground;
 }
