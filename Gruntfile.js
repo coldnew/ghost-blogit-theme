@@ -42,17 +42,31 @@ module.exports = function(grunt) {
                 separator: ';',
             },
             js: {
-                src: ['bower_components/bootstrap/dist/js/bootstrap.js',
-                      'assets/js/jquery.fitvids.js',
-                      'assets/js/blogit.colorprompt.js',
-                      'assets/js/blogit.toc.js',
-                     ],
+                src: [
+                    // bootstrap
+                    'bower_components/bootstrap/dist/js/bootstrap.js',
+                    // fancybox
+                    'bower_components/fancybox/source/jquery.fancybox.js',
+                    'bower_components/fancybox/source/helpers/jquery.fancybox-buttons.js',
+                    'bower_components/fancybox/source/helpers/jquery.fancybox-media.js',
+                    'bower_components/fancybox/source/helpers/jquery.fancybox-thumbs.js',
+                    // others
+                    'assets/js/jquery.fitvids.js',
+                    // blogit
+                    'assets/js/blogit.colorprompt.js',
+                    'assets/js/blogit.toc.js',
+                    'assets/js/blogit.fancybox.js',
+                ],
 
                 dest: 'assets/js/blogit.js'
             },
 
             css: {
-                src: ['assets/css/**.sass.css', 'assets/css/**.less.css'],
+                src: ['bower_components/bootstrap/dist/css/bootstrap.css',
+                      'bower_components/bootstrap/dist/css/bootstrap-theme.css',
+                      'assets/css/**.sass.css',
+                      'assets/css/**.less.css'
+                     ],
 
                 dest: 'assets/css/blogit.css'
             },
